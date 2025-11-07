@@ -1,5 +1,5 @@
 from flask import render_template
-from splent_feature_mail import mail_bp
+from splent_io.splent_feature_mail import mail_bp
 
 
 @mail_bp.route("/mail", methods=["GET"])

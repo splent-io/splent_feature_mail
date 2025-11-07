@@ -1,7 +1,7 @@
 import os
 
 from flask_mail import Mail, Message
-from splent_feature_mail.repositories import MailRepository
+from splent_io.splent_feature_mail.repositories import MailRepository
 from splent_framework.services.BaseService import BaseService
 
 
