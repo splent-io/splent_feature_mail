@@ -10,3 +10,7 @@ mail_service = MailService()
 def init_feature(app):
     mail_service.init_app(app)
     app.mail_service = mail_service
+
+
+def inject_context_vars(app):
+    return {}

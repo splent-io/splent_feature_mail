@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "splent_feature_mail"
 version = "1.1.0"
-requires-python = ">=3.12"
+requires-python = ">=3.13"
 authors = [{ name = "DiversoLab", email = "diversolab@us.es" }]
 dependencies = [
 
@@ -17,3 +17,16 @@ include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.splent.contract]
+description = "Mail feature: provides MailService for transactional email sending"
+
+[tool.splent.contract.provides]
+routes = ["/mail"]
+blueprints = ["mail_bp"]
+models = []
+commands = []
+
+[tool.splent.contract.requires]
+features = []
+env_vars = ["MAIL_SERVER", "MAIL_PORT", "MAIL_USERNAME", "MAIL_PASSWORD", "MAIL_DEFAULT_SENDER"]
