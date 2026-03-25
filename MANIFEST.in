@@ -1,1 +1,1 @@
-recursive-include src/splent_feature_mail/assets/dist *.js *.css *.map
+recursive-include src/splent_io/splent_feature_mail/assets/dist *.js *.css *.map
