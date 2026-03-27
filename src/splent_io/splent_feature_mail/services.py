@@ -6,23 +6,16 @@ from splent_framework.services.BaseService import BaseService
 
 
 class MailService(BaseService):
-
     def __init__(self):
         super().__init__(MailRepository())
         self.mail = None
         self.sender = None
 
     def init_app(self, app):
-        app.config["MAIL_SERVER"] = os.getenv(
-            "MAIL_SERVER", "smtp.office365.com"
-        )
+        app.config["MAIL_SERVER"] = os.getenv("MAIL_SERVER", "smtp.office365.com")
         app.config["MAIL_PORT"] = int(os.getenv("MAIL_PORT", "587"))
-        app.config["MAIL_USE_TLS"] = (
-            os.getenv("MAIL_USE_TLS", "True") == "True"
-        )
-        app.config["MAIL_USE_SSL"] = (
-            os.getenv("MAIL_USE_SSL", "False") == "True"
-        )
+        app.config["MAIL_USE_TLS"] = os.getenv("MAIL_USE_TLS", "True") == "True"
+        app.config["MAIL_USE_SSL"] = os.getenv("MAIL_USE_SSL", "False") == "True"
         app.config["MAIL_USERNAME"] = os.getenv(
             "MAIL_USERNAME", "tu_correo@tudominio.com"
         )
