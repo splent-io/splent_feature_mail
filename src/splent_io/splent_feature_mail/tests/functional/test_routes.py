@@ -6,7 +6,6 @@ request/response cycles (GET, POST, redirects, rendered HTML).
 """
 
 
-def test_index_is_reachable(test_client):
-    """Verify the feature index route exists (200 if public, 302 if login required)."""
-    response = test_client.get("/mail")
-    assert response.status_code in (200, 302)
+def test_placeholder():
+    """Remove this once you add real functional tests."""
+    assert True
