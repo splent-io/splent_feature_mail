@@ -48,7 +48,9 @@ class MailService:
         if not self._app:
             raise RuntimeError("MailService not initialized. Call init_app() first.")
 
-        default_sender = self._app.config.get("MAIL_DEFAULT_SENDER", "noreply@example.com")
+        default_sender = self._app.config.get(
+            "MAIL_DEFAULT_SENDER", "noreply@example.com"
+        )
 
         msg = Message(
             subject=subject,
@@ -62,6 +64,7 @@ class MailService:
             self.mail.send(msg)
 
         from splent_io.splent_feature_mail.signals import email_sent
+
         email_sent.send(self._app, subject=subject, recipients=recipients)
 
         logger.info("Email sent: '%s' to %s", subject, recipients)

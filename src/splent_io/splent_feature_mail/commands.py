@@ -46,8 +46,13 @@ def mail_config():
     """Show current SMTP configuration (passwords masked)."""
     cfg = current_app.config
     keys = [
-        "MAIL_SERVER", "MAIL_PORT", "MAIL_USE_TLS", "MAIL_USE_SSL",
-        "MAIL_USERNAME", "MAIL_PASSWORD", "MAIL_DEFAULT_SENDER",
+        "MAIL_SERVER",
+        "MAIL_PORT",
+        "MAIL_USE_TLS",
+        "MAIL_USE_SSL",
+        "MAIL_USERNAME",
+        "MAIL_PASSWORD",
+        "MAIL_DEFAULT_SENDER",
     ]
     click.echo()
     click.secho("  SMTP Configuration", bold=True)
