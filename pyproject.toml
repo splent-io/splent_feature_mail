@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "splent_feature_mail"
-version = "1.3.4"
+version = "1.3.5"
 readme = "README.md"
 requires-python = ">=3.13"
 
@@ -28,7 +28,7 @@ description = "Email sending via Flask-Mail with SMTP configuration"
 
 [tool.splent.contract.provides]
 routes     = []
-blueprints = ["mail_bp"]
+blueprints = []
 models     = []
 commands   = ["config", "test"]
 hooks      = []
@@ -43,8 +43,8 @@ env_vars = ["MAIL_DEFAULT_SENDER", "MAIL_PASSWORD", "MAIL_PORT", "MAIL_SERVER", 
 signals  = []
 
 [tool.splent.contract.extensible]
-services  = ["MailService"]
-templates = []
+services  = []
+templates = ["mail/index.html"]
 models    = []
 hooks     = []
 routes    = false
