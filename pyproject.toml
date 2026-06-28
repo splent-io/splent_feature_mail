@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "splent_feature_mail"
-version = "0.0.1"
+version = "1.4.0"
 readme = "README.md"
 requires-python = ">=3.13"
 
@@ -23,22 +23,30 @@ exclude = ["*.tests", "*.tests.*"]
 [tool.splent]
 cli_version = "1.11.0"
 
+# ── Feature Contract (auto-generated) ────────────────────────────────────────
+# Do not edit manually — re-run `splent feature:contract --write` to refresh.
 [tool.splent.contract]
 description = "mail feature"
 
 [tool.splent.contract.provides]
-routes = []
+routes     = []
 blueprints = []
-models = []
-commands = []
+models     = []
+commands   = ["hello"]
+hooks      = []
+services   = []
+signals    = []
+translations = []
+docker     = []
 
 [tool.splent.contract.requires]
 features = []
-env_vars = []
+env_vars = ["MAIL_FROM", "MAIL_HOST", "MAIL_PASSWORD", "MAIL_PORT", "MAIL_USERNAME", "MAIL_USE_TLS"]
+signals  = []
 
 [tool.splent.contract.extensible]
-services = []
+services  = []
 templates = []
-models = []
-hooks = []
-routes = false
+models    = []
+hooks     = []
+routes    = false
