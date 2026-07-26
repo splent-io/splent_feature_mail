@@ -25,8 +25,11 @@ cli_version = "1.11.0"
 
 # ── Feature Contract (auto-generated) ────────────────────────────────────────
 # Do not edit manually — re-run `splent feature:contract --write` to refresh.
+# Preserved across refreshes: description, category, tags, env, and
+# requires.features_manual (dependencies invisible to static analysis).
 [tool.splent.contract]
-description = "mail feature"
+description = "Transactional email delivery via SMTP (MailService for other features)"
+archetype = "service"
 
 [tool.splent.contract.provides]
 routes     = []
@@ -34,18 +37,19 @@ blueprints = []
 models     = []
 commands   = ["hello"]
 hooks      = []
-services   = []
+services   = ["MailService"]
 signals    = []
 translations = []
 docker     = []
 
 [tool.splent.contract.requires]
 features = []
+features_optional = ["settings"]
 env_vars = ["MAIL_FROM", "MAIL_HOST", "MAIL_PASSWORD", "MAIL_PORT", "MAIL_USERNAME", "MAIL_USE_TLS"]
 signals  = []
 
 [tool.splent.contract.extensible]
-services  = []
+services  = ["MailService"]
 templates = []
 models    = []
 hooks     = []
