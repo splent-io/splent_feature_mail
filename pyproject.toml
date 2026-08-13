@@ -60,14 +60,14 @@ routes    = false
 # ── Configuration ─────────────────────────────────────────────────────────
 # Where mail goes. The defaults point at the mailhog container a dev product
 # runs, so nothing leaves the machine until a product says otherwise.
-#
-# MAIL_PASSWORD is deliberately absent: it is a credential, and its place is
-# the product's .env, which is not committed.
 [tool.splent.config]
 MAIL_HOST = "localhost"
 MAIL_PORT = 1025
 MAIL_USE_TLS = "0"
 MAIL_USERNAME = ""
+# A credential, so the default is empty. The real value belongs in the
+# product's .env, which is not committed.
+MAIL_PASSWORD = ""
 # The address a recipient sees and may reply to. A product that sends real
 # mail sets this to one that exists.
 MAIL_FROM = "no-reply@localhost"
